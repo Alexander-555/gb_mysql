@@ -4,5 +4,5 @@ USE example;
 
 CREATE TABLE IF NOT EXISTS users (
 	id SERIAL PRIMARY KEY, 
-	name VARCHAR(255) COMMENT 'Имя'
+	name CHAR(100) COMMENT 'Имя'
 );
