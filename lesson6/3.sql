@@ -3,7 +3,7 @@
 */
 SELECT
 	user_id,
-    (SELECT count(*) FROM `like` WHERE user_id = `profile`.user_id) as likes_num
+	(SELECT count(*) FROM `like` WHERE user_id = `profile`.user_id) as likes_num
 FROM `profile`
 ORDER BY birthday DESC
 LIMIT 10;
