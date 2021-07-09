@@ -3,17 +3,14 @@ FROM message
 WHERE to_user_id = 96 AND
 	from_user_id IN 
 		(
-			SELECT from_user_id FROM frienship_request
-			WHERE status = 1 AND to_user_id = 96
-			GROUP BY from_user_id
-        )
-	OR
-    from_user_id IN 
-		(
-			SELECT to_user_id FROM frienship_request
-			WHERE status = 1 AND from_user_id = 96
-			GROUP BY to_user_id
-        )
+			SELECT
+				IF(from_user_id = 96, to_user_id, from_user_id) AS friend_id
+			FROM friendship_request
+			WHERE
+				(from_user_id = 96 OR to_user_id = 96)
+				AND 
+				`status` = 1
+        	)
 GROUP BY from_user_id
 ORDER BY messages_num DESC
 LIMIT 1;
