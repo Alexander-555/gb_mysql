@@ -1,15 +1,16 @@
 SELECT 
-	id,
-	c1.name as `Откуда`,
+    id,
+    c1.name as `Откуда`,
     c2.name as `Куда`
 FROM 
-	flights
+    flights
 JOIN 
-	cities as c1
+    cities as c1
 ON 
-	`from` = c1.`label`
+    `from` = c1.`label`
 JOIN 
-	cities as c2
+    cities as c2
 ON 
-	`to` = c2.`label`
-ORDER BY id;
+    `to` = c2.`label`
+ORDER BY 
+    id;
