@@ -1,10 +1,10 @@
 SELECT 
-	products.name as `Товар`,
+    products.name as `Товар`,
     products.description as `Описание товара`,
     catalogs.name as `Каталог`
 FROM
-	products
+    products
 LEFT JOIN 
-	catalogs
+    catalogs
 ON
-	products.catalog_id = catalogs.id;
+    products.catalog_id = catalogs.id;
