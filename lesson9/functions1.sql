@@ -4,7 +4,7 @@ CREATE FUNCTION hello ()
 RETURNS varchar(12) DETERMINISTIC
 BEGIN
     DECLARE h int;
-	DECLARE t varchar(12);
+    DECLARE t varchar(12);
     
     SET h = hour(now());
     
